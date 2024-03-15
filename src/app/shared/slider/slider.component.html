@@ -1,0 +1,46 @@
+<div >
+  <div class="flex w-full justify-between items-center">
+    <button (click)="prev()" class="sm:w-10 sm:h-10 w-8 h-8  rounded-full flex bg-white text-slate-800">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="m-auto w-5 h-5 sm:w-6 sm:h-6"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="m18.75 4.5-7.5 7.5 7.5 7.5m-6-15L5.25 12l7.5 7.5"
+        />
+      </svg>
+    </button>
+  <div #sliderContainer class="w-full overflow-hidden"> 
+     <ul  class="flex transition-all duration-300" [style.width.px]="this.sliderwidth"
+       [style.marginLeft.px]="this.slidermarginleft" 
+     >
+    <li [style.width.px]="this.slidewith" *ngFor="let category of this.categories" >
+   <div class="px-10 py-5 text-slate-800 font-semibold text-center border-emerald-300 border-2 border-opacity-20 mx-5 rounded-2xl">
+    {{ category }}
+   </div>
+    </li>
+  </ul></div>
+    <button (click)="next()" class="sm:w-10 sm:h-10 w-8 h-8 rounded-full flex bg-white text-slate-800">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="m-auto w-5 h-5 sm:w-6 sm:h-6"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="m5.25 4.5 7.5 7.5-7.5 7.5m6-15 7.5 7.5-7.5 7.5"
+        />
+      </svg>
+    </button>
+  </div>
+</div>

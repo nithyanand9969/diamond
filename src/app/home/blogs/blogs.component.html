@@ -1,0 +1,12 @@
+
+<section class="pt-10">
+    <app-heading
+        subHeading="All Topics "
+        headingText1="All Collage"
+        headingText2="All Studnets"
+        speicalHeadingID="2"
+    ></app-heading>
+    <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+    <app-card *ngFor="let blog of this.blogs" class="w-full gap-8 p-8"  type="B" [input]="blog"></app-card>
+    </div>  
+</section>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +6,29 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'daimondclass';
+
+  isMenuScroller=false;
+  isSideBar=false;
+
+  @HostListener('window:scroll',['$event'])
+  scrollCheck(){
+    if(window.scrollY>80)
+    this.isMenuScroller=true;
+    else
+    this.isMenuScroller=false;
+    console.log(this.isMenuScroller)
+  }
+
+  opensidebar(){
+    this.isSideBar=true;
+  }
+  closesidebar(){
+    this.isSideBar=false;
+  }
+  scrollToTop(){
+    document.body.scrollIntoView({
+      behavior:'smooth'
+    })
+  }
+
 }
